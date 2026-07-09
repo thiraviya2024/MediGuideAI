@@ -1,9 +1,11 @@
-import os
-from dotenv import load_dotenv
+import streamlit as st
 from groq import Groq
 
-load_dotenv()
+
+# Get API key from Streamlit Cloud Secrets
+api_key = st.secrets["GROQ_API_KEY"]
+
 
 client = Groq(
-    api_key=os.getenv("GROQ_API_KEY")
+    api_key=api_key
 )
